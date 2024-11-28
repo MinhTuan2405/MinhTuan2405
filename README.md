@@ -11,10 +11,10 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://linkedin.com/in/https://www.linkedin.com/in/minhtuan2405dev/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/minhtuan2405dev/" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/minhtuan2405dev/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/minhtuan2405dev/" height="30" width="40" /></a>
 <a href="https://stackoverflow.com/users/18632200" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="18632200" height="30" width="40" /></a>
-<a href="https://fb.com/https://www.facebook.com/profile.php?id=100051197601834" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="https://www.facebook.com/profile.php?id=100051197601834" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/https://leetcode.com/u/mnhtn_/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="https://leetcode.com/u/mnhtn_/" height="30" width="40" /></a>
+<a href="https://www.facebook.com/profile.php?id=100051197601834" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="https://www.facebook.com/profile.php?id=100051197601834" height="30" width="40" /></a>
+<a href="https://leetcode.com/u/mnhtn_/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="https://leetcode.com/u/mnhtn_/" height="30" width="40" /></a>
 </p>
 
 <h2 align="center">I am currently learning and working with the following tech stack for my software engineering career.</h2>
