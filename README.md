@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Minh Tuan</h1>
-<h3 align="center">A software developer - Student of University of Information Technology | UIT - HCMCVNU - VIET NAM</h3>
+<h3 align="center">A Software developer - Student of University of Information Technology | UIT - HCMCVNU - VIET NAM</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=minhtuan2405&label=Profile%20views&color=0e75b6&style=flat" alt="minhtuan2405" /> </p>
 
