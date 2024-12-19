@@ -6,8 +6,8 @@
 
 - 📫 How to reach me 
     - **Gmail:** tuannguyen.02042005@gmail.com
-    - **Phone Number:** (+84) 0342809493
     - **Telegram**  https://t.me/Yuno_fory
+    - **Phone Number:** (+84) 0342809493
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
