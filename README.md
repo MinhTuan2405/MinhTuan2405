@@ -1,8 +1,5 @@
 <h1 align="center">Hi 👋, I'm Minh Tuan</h1>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=minhtuan2405&label=Profile%20views&color=0e75b6&style=flat" alt="minhtuan2405" /> </p>
-
-
 - 📫 How to reach me 
     - **Gmail:** tuannguyen.02042005@gmail.com
     - **Phone Number:** (+84) 0342809493
