@@ -1,8 +1,8 @@
 # Hi 👋, I'm Minh Tuan
 
 📫 **How to reach me**  
-- **Gmail:** [tuannguyen.02042005@gmail.com](mailto:tuannguyen.02042005@gmail.com)  
-- **Phone:** [(+84) 0342809493](tel:+84342809493)  
+- **Gmail 📧:** [tuannguyen.02042005@gmail.com](mailto:tuannguyen.02042005@gmail.com)  
+- **Phone 📲:** [(+84) 0342809493](tel:+84342809493)  
 
 ---
 
