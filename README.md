@@ -12,4 +12,4 @@
 
 - Here is my CV🍀🛠️🌵:
 <br />
-<a href="https://mycv-mnhtn.vercel.app/"> </a>
+<a href="https://mycv-mnhtn.vercel.app/">View My CV at: https://mycv-mnhtn.vercel.app</a>
