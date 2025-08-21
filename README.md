@@ -1,39 +1,16 @@
-<h1 style="color:#4cc9f0; font-weight:700; margin-bottom:16px;">
-  Hi 👋, I'm Minh Tuan
-</h1>
+# Hi 👋, I'm Minh Tuan
 
-<p style="margin:12px 0; font-size:16px; color:#e6eef8;">
-  📫 <b>How to reach me:</b><br/>
-  <b>Gmail:</b> 
-  <a href="mailto:tuannguyen.02042005@gmail.com" style="color:#80ffea; text-decoration:none;">
-    tuannguyen.02042005@gmail.com
-  </a><br/>
-  <b>Phone:</b> 
-  <a href="tel:+84342809493" style="color:#80ffea; text-decoration:none;">
-    (+84) 0342809493
-  </a>
-</p>
+📫 **How to reach me**  
+- **Gmail:** [tuannguyen.02042005@gmail.com](mailto:tuannguyen.02042005@gmail.com)  
+- **Phone:** [(+84) 0342809493](tel:+84342809493)  
 
-<h3 style="margin-top:20px; font-weight:600; color:#e6eef8;">
-  Connect with me:
-</h3>
+---
 
-<p style="margin:8px 0;">
-  <a href="https://www.linkedin.com/in/minhtuan2405dev/" target="_blank" style="margin-right:8px;">
-    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" 
-         alt="LinkedIn" height="30" width="40"/>
-  </a>
-  <a href="https://www.facebook.com/mnhtn245/" target="_blank">
-    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" 
-         alt="Facebook" height="30" width="40"/>
-  </a>
-</p>
+### Connect with me
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/minhtuan2405dev/)  
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/mnhtn245/)
 
-<p style="margin-top:16px; font-size:16px; color:#e6eef8;">
-  🌵🍀🛠️ <b>Here is my CV:</b><br/>
-  <a href="https://mycv-mnhtn.vercel.app/" target="_blank" 
-     style="display:inline-block; margin-top:8px; padding:8px 14px; border-radius:8px; 
-            background:#4cc9f0; color:#0b0f14; font-weight:600; text-decoration:none;">
-    My CV 🍀🌵📋
-  </a>
-</p>
+---
+
+### Here is my CV 🍀🛠️🌵  
+[![My CV](https://img.shields.io/badge/My%20CV-4cc9f0?style=for-the-badge&logo=readthedocs&logoColor=black)](https://mycv-mnhtn.vercel.app/)
