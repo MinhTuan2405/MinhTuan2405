@@ -2,14 +2,81 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Minh Tuan | Online CV | Data Engineer | Software Engineer</title>
-  <style>
-    body { margin: 0; }
-    iframe { width: 100vw; height: 100vh; border: none; }
+  <title>Minh Tuan | Online CV | Data Engineer | Software Engineer</title>  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4a90e2, #357abd);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      height: calc(100vh - 70px);
+    }
+
+    .cv-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .cv-card h2 {
+      margin: 0;
+      padding: 0.75rem;
+      background: #357abd;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <iframe src="DE.pdf"></iframe>
-  <iframe src="DE.pdf"></iframe>
+  <header>
+    >Minh Tuan | Online CV | Data Engineer | Software Engineer
+  </header>
+  <main>
+    <div class="cv-card">
+      <h2>Software Engineer</h2>
+      <iframe src="SE.pdf"></iframe>
+    </div>
+    <div class="cv-card">
+      <h2>Data Engineer</h2>
+      <iframe src="DE.pdf"></iframe>
+    </div>
+  </main>
 </body>
 </html>
+
+
