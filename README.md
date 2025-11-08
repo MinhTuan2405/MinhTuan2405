@@ -1,1 +1,1 @@
-[![about me 🍀🛠️🌵]()](https://mycv-mnhtn.vercel.app/)
+[About me 🍀🛠️🌵](https://mycv-mnhtn.vercel.app/)
