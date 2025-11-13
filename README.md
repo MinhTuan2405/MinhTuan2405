@@ -7,6 +7,6 @@
 </p> -->
 
 <p align="center">
-  <img src="./i.gif" alt="About Me GIF" width="100%" />
+  <img src="./2ef7d5bd9bee2411fc76bb8643fc6a72.gif" alt="About Me GIF" width="100%" />
 </p>
 
