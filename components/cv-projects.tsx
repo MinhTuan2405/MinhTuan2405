@@ -7,7 +7,7 @@ export default function CVProjects() {
   const projects = [
     {
       title: "EnsemTrust: Fake news detection",
-      period: "10/2025 - Now",
+      period: "10/2025 - 12/2025",
       description:
         "Building a complete data platform using the Lakehouse architecture, Ensemble Learning models to accurately classify news articles as genuine or fake and enabling analysis for reporting",
       technologies: [
