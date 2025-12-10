@@ -1,5 +1,5 @@
 <h2>
-  <a href="https://mycv-mnhtn.vercel.app/">🌿 About Me 🍀🛠️🌵</a>
+  <a href="https://minhtuanresume.netlify.app/">🌿 About Me 🍀🛠️🌵</a>
 </h2>
 
 <!-- <p align="center">
