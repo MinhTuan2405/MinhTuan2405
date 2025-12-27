@@ -22,7 +22,7 @@ export default function CVAbout() {
       {/* Key Metrics */}
       <div className="grid grid-cols-3 gap-4 pt-4">
         {[
-          { label: "Projects", value: "2+" },
+          { label: "Projects", value: "3+" },
           { label: "Experience", value: "1yr" },
           { label: "Skills", value: "15+" },
         ].map((metric, index) => (
