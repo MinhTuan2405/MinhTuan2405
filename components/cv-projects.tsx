@@ -38,6 +38,27 @@ export default function CVProjects() {
       teamSize: "1",
       github: "https://github.com/MinhTuan2405/linkedIn_job_datapl4tform",
     },
+    {
+      title: "BikeStoreShop Backend API",
+      period: "11/2025 - 12/2025",
+      description:
+        "Building a RESTful API server for bicycle store management system with 54 endpoints, handling product management, order processing, customer management, and business analytics",
+      technologies: [
+        "FastAPI",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Alembic",
+        "JWT",
+        "Pytest",
+        "Pydantic",
+        "Uvicorn",
+      ],
+      outcome:
+        "Delivered a complete backend system with authentication/authorization, product catalog management, order processing, customer relationship management, and 13 comprehensive business analytics endpoints for sales reporting and insights.",
+      role: "Backend Developer",
+      teamSize: "2",
+      github: "https://github.com/MinhTuan2405/LightWeightBikeStore"
+    },
   ]
 
   const containerVariants = {
