@@ -6,7 +6,7 @@ export default function CVSkills() {
   const skillCategories = [
     {
       title: "Programming",
-      skills: ["Python", "JavaScript", "SQL"],
+      skills: ["Python", "JavaScript", "TypeScript", "SQL"],
     },
     {
       title: "Data Technologies",
@@ -14,11 +14,15 @@ export default function CVSkills() {
     },
     {
       title: "Data Engineering",
-      skills: ["Data modeling", "OLAP", "ETL/ELT", "Data analysis"],
+      skills: ["Data modeling", "OLAP", "ETL/ELT"],
+    },
+    {
+      title: "Data Analysis",
+      skills: ["PowerBI", "DAX", "MDX"], 
     },
     {
       title: "Software",
-      skills: ["FastAPI", "ExpressJS"],
+      skills: ["FastAPI", "ExpressJS", "React"],
     },
     {
       title: "Others",
