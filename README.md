@@ -7,7 +7,7 @@
 </p> -->
 
 <p align="center">
-  <img src="https://i.pinimg.com/originals/3e/55/2f/3e552ff46b95bd34259c0025279873fc.gif" alt="About Me GIF" width="100%" />
+  <img src="https://i.pinimg.com/originals/d0/0c/60/d00c60a369aca73e7b488645aea8f5c6.gif" alt="About Me GIF" width="100%" />
 </p> 
 
 
