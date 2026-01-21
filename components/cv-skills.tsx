@@ -25,8 +25,12 @@ export default function CVSkills() {
       skills: ["FastAPI", "ExpressJS", "React"],
     },
     {
+      title: "Automation",
+      skills: ["n8n", "API", "Worklow"],
+    },
+    {
       title: "Others",
-      skills: ["Git", "Linux"],
+      skills: ["Git", "Linux", "Bash Script"],
     },
   ]
 
