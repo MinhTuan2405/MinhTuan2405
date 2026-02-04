@@ -4,6 +4,18 @@ import { motion } from "framer-motion"
 
 export default function CVExperience() {
   const experiences = [
+      {
+      position: "Analytics Engineer",
+      company: "HIPTECH SOLUTION",
+      location: "Ho Chi Minh City",
+      period: "01/2026 - present",
+      highlights: [
+        "Learned about modern data tools and workflows, applying them to complete assigned tasks",
+        "Supported the data engineering team by implementing pipeline features and fixes as assigned",
+        "Develop data pipeline and analysis data by using dbt, dagster and related tools",
+        "Visulize data, discover the potentinal metrics on PowerBI and related tools"
+      ],
+    },
     {
       position: "Data Engineer Intern",
       company: "HIPTECH SOLUTION",
