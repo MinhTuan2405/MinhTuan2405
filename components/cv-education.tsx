@@ -29,35 +29,35 @@ export default function CVEducation() {
   }
 
   return (
-    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8">
-      <h2 className="text-3xl font-bold text-foreground mb-6">Education</h2>
+    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Education</h2>
 
       <motion.div
         variants={itemVariants}
-        className="bg-gradient-to-r from-primary/5 to-transparent border border-border/30 rounded-lg p-6 hover:border-accent/50 transition-all duration-300"
+        className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover-lift"
       >
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <h3 className="text-xl font-semibold text-foreground">{education.school}</h3>
-            <p className="text-accent mt-1">{education.major}</p>
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+          <div className="flex-1">
+            <h3 className="text-lg sm:text-xl font-semibold text-foreground">{education.school}</h3>
+            <p className="text-accent mt-1 text-sm sm:text-base">{education.major}</p>
           </div>
-          <span className="text-sm text-muted-foreground bg-secondary/20 px-3 py-1 rounded-full">
+          <span className="text-xs sm:text-sm text-muted-foreground glass-light px-3 py-1.5 rounded-full self-start">
             {education.period}
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
           <div>
             <span className="text-muted-foreground">Degree:</span>
-            <p className="text-foreground font-medium">{education.degree}</p>
+            <p className="text-foreground font-medium mt-1">{education.degree}</p>
           </div>
           <div>
             <span className="text-muted-foreground">GPA:</span>
-            <p className="text-foreground font-medium">{education.gpa}</p>
+            <p className="text-foreground font-medium mt-1">{education.gpa}</p>
           </div>
-          <div className="col-span-2">
+          <div className="sm:col-span-2">
             <span className="text-muted-foreground">Foreign Language:</span>
-            <p className="text-foreground font-medium">{education.language}</p>
+            <p className="text-foreground font-medium mt-1">{education.language}</p>
           </div>
         </div>
       </motion.div>

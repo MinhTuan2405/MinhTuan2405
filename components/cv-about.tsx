@@ -7,12 +7,14 @@ export default function CVAbout() {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="space-y-8"
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      className="space-y-8 sm:space-y-10"
     >
       <div>
-        <h2 className="text-3xl font-bold text-foreground mb-6">About</h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">
+          About
+        </h2>
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
           Dedicated to completing my Bachelor's degree and leveraging core Data Engineering competencies to excel in a
           Fresher position. Committed to long-term professional growth, aiming to advance to a Senior Data Engineer role
           specialized in Cloud Computing, Distributed Systems, and scalable data architectures.
@@ -20,7 +22,7 @@ export default function CVAbout() {
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-3 gap-4 pt-4">
+      <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
         {[
           { label: "Projects", value: "3+" },
           { label: "Experience", value: "1yr" },
@@ -30,11 +32,15 @@ export default function CVAbout() {
             key={metric.label}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="bg-card border border-border/30 rounded-lg p-4 text-center hover:border-accent/50 transition-colors"
+            transition={{ delay: index * 0.1, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+            className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover-lift cursor-default group"
           >
-            <div className="text-2xl font-bold text-accent">{metric.value}</div>
-            <div className="text-sm text-muted-foreground">{metric.label}</div>
+            <div className="text-2xl sm:text-3xl font-bold text-gradient group-hover:scale-110 transition-smooth inline-block">
+              {metric.value}
+            </div>
+            <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">
+              {metric.label}
+            </div>
           </motion.div>
         ))}
       </div>

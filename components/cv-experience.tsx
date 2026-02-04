@@ -56,33 +56,33 @@ export default function CVExperience() {
   }
 
   return (
-    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8">
-      <h2 className="text-3xl font-bold text-foreground mb-6">Experience</h2>
+    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Experience</h2>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            className="bg-gradient-to-r from-primary/5 to-transparent border border-border/30 rounded-lg p-6 hover:border-accent/50 transition-all duration-300"
+            className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover-lift"
           >
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">{exp.position}</h3>
-                <p className="text-accent mt-1">{exp.company}</p>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">{exp.position}</h3>
+                <p className="text-accent mt-1 text-sm sm:text-base">{exp.company}</p>
               </div>
-              <span className="text-sm text-muted-foreground bg-secondary/20 px-3 py-1 rounded-full whitespace-nowrap">
+              <span className="text-xs sm:text-sm text-muted-foreground glass-light px-3 py-1.5 rounded-full self-start whitespace-nowrap">
                 {exp.period}
               </span>
             </div>
 
-            <p className="text-sm text-muted-foreground mb-4">{exp.location}</p>
+            <p className="text-xs sm:text-sm text-muted-foreground mb-4">{exp.location}</p>
 
-            <ul className="space-y-2">
+            <ul className="space-y-2.5 sm:space-y-3">
               {exp.highlights.map((highlight, idx) => (
-                <li key={idx} className="flex gap-3 text-muted-foreground text-sm leading-relaxed">
-                  <span className="text-accent mt-1">→</span>
-                  <span>{highlight}</span>
+                <li key={idx} className="flex gap-3 text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                  <span className="text-accent mt-0.5 flex-shrink-0">→</span>
+                  <span className="flex-1">{highlight}</span>
                 </li>
               ))}
             </ul>

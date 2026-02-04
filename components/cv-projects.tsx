@@ -78,35 +78,35 @@ export default function CVProjects() {
   }
 
   return (
-    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8">
-      <h2 className="text-3xl font-bold text-foreground mb-6">Projects</h2>
+    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Projects</h2>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            className="bg-gradient-to-r from-accent/5 to-transparent border border-border/30 rounded-lg p-6 hover:border-accent/50 transition-all duration-300"
+            className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover-lift"
           >
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">{project.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">
                   {project.role} • Team size: {project.teamSize}
                 </p>
               </div>
-              <span className="text-sm text-muted-foreground bg-secondary/20 px-3 py-1 rounded-full whitespace-nowrap">
+              <span className="text-xs sm:text-sm text-muted-foreground glass-light px-3 py-1.5 rounded-full self-start whitespace-nowrap">
                 {project.period}
               </span>
             </div>
 
-            <p className="text-muted-foreground mb-4">{project.description}</p>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">{project.description}</p>
 
             <div className="mb-4">
-              <p className="text-sm font-semibold text-foreground mb-2">Technologies:</p>
-              <div className="flex flex-wrap gap-2">
+              <p className="text-xs sm:text-sm font-semibold text-foreground mb-2">Technologies:</p>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="bg-primary/10 text-accent text-xs px-2 py-1 rounded-full">
+                  <span key={tech} className="glass-button text-primary px-2.5 py-1 rounded-full text-xs font-medium">
                     {tech}
                   </span>
                 ))}
@@ -114,19 +114,20 @@ export default function CVProjects() {
             </div>
 
             <div className="mb-4 pb-4 border-b border-border/20">
-              <p className="text-sm font-semibold text-foreground mb-2">Outcome:</p>
-              <p className="text-sm text-muted-foreground">{project.outcome}</p>
+              <p className="text-xs sm:text-sm font-semibold text-foreground mb-2">Outcome:</p>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{project.outcome}</p>
             </div>
 
             <motion.a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-smooth text-sm"
               whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Github className="w-4 h-4" />
-              <span className="text-sm">View on GitHub</span>
+              <span>View on GitHub</span>
             </motion.a>
           </motion.div>
         ))}

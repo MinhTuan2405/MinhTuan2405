@@ -51,23 +51,24 @@ export default function CVSkills() {
   }
 
   return (
-    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8">
-      <h2 className="text-3xl font-bold text-foreground mb-6">Skills</h2>
+    <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Skills</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {skillCategories.map((category) => (
           <motion.div
             key={category.title}
             variants={itemVariants}
-            className="bg-card border border-border/30 rounded-lg p-6 hover:border-accent/50 transition-all duration-300"
+            className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover-lift"
           >
-            <h3 className="text-lg font-semibold text-foreground mb-4">{category.title}</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">{category.title}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <motion.span
                   key={skill}
-                  className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium hover:bg-accent/20 transition-colors"
-                  whileHover={{ scale: 1.05 }}
+                  className="glass-button px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium text-accent hover:shadow-elevated transition-smooth cursor-default"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {skill}
                 </motion.span>
