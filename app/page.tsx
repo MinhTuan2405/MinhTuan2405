@@ -59,7 +59,7 @@ export default function CVPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 z-40 glass-backdrop"
+            className="lg:hidden fixed inset-0 z-50 glass-backdrop"
             onClick={() => setMobileMenuOpen(false)}
           >
             <motion.div
