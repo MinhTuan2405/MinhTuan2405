@@ -40,19 +40,50 @@ export default function CVHeader() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="glass-button p-2.5 sm:p-3 rounded-xl hover:shadow-elevated transition-smooth shrink-0"
+              className="glass-button p-2.5 sm:p-3 rounded-xl hover:shadow-elevated hover-glow transition-smooth shrink-0 relative overflow-hidden"
               aria-label="Toggle theme"
             >
+              {/* Glow effect overlay */}
+              <motion.div
+                className="absolute inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: theme === "dark" 
+                    ? "radial-gradient(circle, oklch(0.7 0.18 200 / 0.15) 0%, transparent 70%)"
+                    : "radial-gradient(circle, oklch(0.55 0.22 265 / 0.15) 0%, transparent 70%)"
+                }}
+              />
+              
               <motion.div
                 initial={false}
-                animate={{ rotate: theme === "dark" ? 0 : 180 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                animate={{ 
+                  rotate: theme === "dark" ? 0 : 180,
+                  scale: 1
+                }}
+                transition={{ 
+                  duration: 0.5, 
+                  ease: [0.4, 0, 0.2, 1],
+                  scale: {
+                    duration: 0.2,
+                    repeat: 1,
+                    repeatType: "reverse"
+                  }
+                }}
+                className="relative z-10"
               >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5 text-accent" />
-                ) : (
-                  <Moon className="w-5 h-5 text-primary" />
-                )}
+                <motion.div
+                  animate={{
+                    filter: theme === "dark" 
+                      ? "drop-shadow(0 0 8px oklch(0.7 0.18 200 / 0.6))"
+                      : "drop-shadow(0 0 8px oklch(0.55 0.22 265 / 0.6))"
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {theme === "dark" ? (
+                    <Sun className="w-5 h-5 text-accent" />
+                  ) : (
+                    <Moon className="w-5 h-5 text-primary" />
+                  )}
+                </motion.div>
               </motion.div>
             </motion.button>
           )}

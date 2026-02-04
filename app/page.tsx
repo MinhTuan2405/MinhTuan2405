@@ -30,18 +30,41 @@ export default function CVPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background" suppressHydrationWarning>
+    <div className="min-h-screen bg-gradient-shift relative" suppressHydrationWarning>
+      {/* Subtle background overlay for depth */}
+      <div className="fixed inset-0 pointer-events-none opacity-30">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(0.6_0.15_265/0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,oklch(0.65_0.12_200/0.06),transparent_50%)]" />
+      </div>
+
       {/* Mobile Menu Button */}
-      <button
+      <motion.button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 glass-button p-4 rounded-full shadow-elevated-lg hover:scale-105 hover:shadow-elevated-lg transition-smooth"
+        className="lg:hidden fixed bottom-6 right-6 z-50 glass-button p-4 rounded-full shadow-elevated-lg hover-glow transition-smooth overflow-hidden"
         aria-label="Toggle menu"
         suppressHydrationWarning
+        whileHover={{ scale: 1.1, y: -2 }}
+        whileTap={{ scale: 0.95 }}
       >
+        {/* Pulse effect when menu is open */}
+        {mobileMenuOpen && (
+          <motion.div
+            className="absolute inset-0 rounded-full bg-accent/20"
+            initial={{ scale: 1, opacity: 0.5 }}
+            animate={{ scale: 1.5, opacity: 0 }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeOut"
+            }}
+          />
+        )}
+        
         <motion.div
           initial={false}
           animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+          className="relative z-10"
         >
           {mobileMenuOpen ? (
             <X className="w-6 h-6 text-foreground" />
@@ -49,7 +72,7 @@ export default function CVPage() {
             <Menu className="w-6 h-6 text-foreground" />
           )}
         </motion.div>
-      </button>
+      </motion.button>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

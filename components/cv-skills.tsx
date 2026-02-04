@@ -59,20 +59,46 @@ export default function CVSkills() {
           <motion.div
             key={category.title}
             variants={itemVariants}
-            className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover-lift"
+            className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover-lift relative overflow-hidden group"
+            whileHover={{ y: -8 }}
           >
-            <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">{category.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill) => (
-                <motion.span
-                  key={skill}
-                  className="glass-button px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium text-accent hover:shadow-elevated transition-smooth cursor-default"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {skill}
-                </motion.span>
-              ))}
+            {/* Shimmer effect */}
+            <motion.div
+              className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100"
+              style={{
+                background: "linear-gradient(90deg, transparent, oklch(0.8 0.15 200 / 0.08), transparent)"
+              }}
+            />
+            
+            {/* Glow effect */}
+            <motion.div
+              className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background: "radial-gradient(circle at 30% 50%, oklch(0.65 0.18 200 / 0.12) 0%, transparent 70%)"
+              }}
+            />
+            
+            <div className="relative z-10">
+              <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <motion.span
+                    key={skill}
+                    className="glass-button px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium text-accent hover:shadow-elevated transition-smooth cursor-default relative overflow-hidden"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {/* Badge glow on hover */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background: "radial-gradient(circle at 50% 50%, oklch(0.65 0.18 200 / 0.15) 0%, transparent 70%)"
+                      }}
+                    />
+                    <span className="relative z-10">{skill}</span>
+                  </motion.span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}

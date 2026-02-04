@@ -183,19 +183,75 @@
   body {
     @apply bg-background text-foreground antialiased;
     /* Smooth transitions for theme switching */
-    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes blur-in {
+  from {
+    backdrop-filter: blur(0px) saturate(100%);
+    -webkit-backdrop-filter: blur(0px) saturate(100%);
+  }
+  to {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 @layer utilities {
-  /* Glassmorphism utilities */
+  /* Glassmorphism utilities with enhanced hover effects */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 32px 0 var(--glass-shadow),
+                inset 0 1px 0 0 var(--glass-highlight);
+    transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass:hover {
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    background: oklch(from var(--glass-bg) calc(l * 1.02) c h / calc(alpha + 0.05));
+    box-shadow: 0 12px 40px 0 var(--glass-shadow),
                 inset 0 1px 0 0 var(--glass-highlight);
   }
   
@@ -206,6 +262,9 @@
     border: 1px solid var(--glass-border);
     box-shadow: 0 20px 60px 0 var(--glass-shadow-lg),
                 inset 0 1px 0 0 var(--glass-highlight);
+    transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .glass-light {
@@ -215,6 +274,15 @@
     border: 1px solid var(--glass-border);
     box-shadow: 0 4px 16px 0 var(--glass-shadow),
                 inset 0 0.5px 0 0 var(--glass-highlight);
+    transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-light:hover {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    background: oklch(from var(--glass-bg-light) calc(l * 1.03) c h / calc(alpha + 0.05));
   }
   
   /* Navbar glass effect */
@@ -227,7 +295,7 @@
                 inset 0 1px 0 0 var(--glass-highlight);
   }
   
-  /* Card glass effect */
+  /* Card glass effect with enhanced hover */
   .glass-card {
     background: var(--glass-bg-light);
     backdrop-filter: blur(16px) saturate(160%);
@@ -235,15 +303,47 @@
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 32px 0 var(--glass-shadow),
                 inset 0 1px 0 0 var(--glass-highlight);
+    transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Button glass effect */
+  .glass-card:hover {
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    background: oklch(from var(--glass-bg-light) calc(l * 1.03) c h / calc(alpha + 0.05));
+    box-shadow: 0 12px 48px 0 var(--glass-shadow),
+                0 0 0 1px var(--glass-highlight),
+                inset 0 1px 0 0 var(--glass-highlight);
+  }
+  
+  /* Button glass effect with glow */
   .glass-button {
     background: var(--glass-bg-light);
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
     border: 1px solid var(--glass-border);
     box-shadow: 0 2px 8px 0 var(--glass-shadow),
+                inset 0 1px 0 0 var(--glass-highlight);
+    transition: backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-button:hover {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    background: oklch(from var(--glass-bg-light) calc(l * 1.05) c h / calc(alpha + 0.1));
+    box-shadow: 0 4px 16px 0 var(--glass-shadow),
+                0 0 20px 0 oklch(from var(--primary) l c h / 0.15),
+                inset 0 1px 0 0 var(--glass-highlight);
+  }
+  
+  .glass-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px 0 var(--glass-shadow),
                 inset 0 1px 0 0 var(--glass-highlight);
   }
   
@@ -256,6 +356,22 @@
     border: 1px solid oklch(from var(--primary) l c h / 0.3);
     box-shadow: 0 4px 16px 0 oklch(from var(--primary) l c h / 0.3),
                 inset 0 1px 0 0 var(--glass-highlight);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-button-primary:hover {
+    background: linear-gradient(135deg, 
+                oklch(from var(--primary) calc(l * 1.05) c h) 0%, 
+                oklch(from var(--primary) calc(l * 0.95) c h) 100%);
+    box-shadow: 0 8px 24px 0 oklch(from var(--primary) l c h / 0.4),
+                0 0 32px 0 oklch(from var(--primary) l c h / 0.2),
+                inset 0 1px 0 0 var(--glass-highlight);
+  }
+  
+  .glass-button-primary:active {
+    transform: scale(0.98);
   }
   
   /* Modal/Dialog glass effect */
@@ -293,38 +409,82 @@
   
   /* Smooth transitions */
   .transition-smooth {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .transition-glass {
-    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Elevation shadows */
+  /* Elevation shadows with glow */
   .shadow-elevated {
     box-shadow: 0 4px 6px -1px var(--glass-shadow),
                 0 2px 4px -1px var(--glass-shadow);
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .shadow-elevated-lg {
     box-shadow: 0 10px 15px -3px var(--glass-shadow),
-                0 4px 6px -2px var(--glass-shadow);
+                0 4px 6px -2px var(--glass-shadow),
+                0 0 20px 0 oklch(from var(--primary) l c h / 0.1);
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Hover states */
+  /* Enhanced hover states with glow */
   .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .hover-lift:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 10px 15px -3px var(--glass-shadow),
-                0 4px 6px -2px var(--glass-shadow);
+    box-shadow: 0 16px 24px -4px var(--glass-shadow),
+                0 8px 12px -2px var(--glass-shadow),
+                0 0 24px 0 oklch(from var(--accent) l c h / 0.12);
   }
   
-  /* Text gradients */
+  /* Hover glow effect */
+  .hover-glow {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 32px 0 oklch(from var(--accent) l c h / 0.2),
+                0 0 16px 0 oklch(from var(--primary) l c h / 0.15);
+  }
+  
+  /* Float animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(from var(--foreground) l c h / 0.03) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  
+  /* Gradient shift background */
+  .bg-gradient-shift {
+    background: linear-gradient(
+      135deg,
+      oklch(from var(--background) calc(l * 0.98) c h),
+      oklch(from var(--background) calc(l * 1.02) c h),
+      oklch(from var(--background) calc(l * 0.98) c h)
+    );
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+  
+  /* Text gradients with animation */
   .text-gradient {
     background-clip: text;
     -webkit-background-clip: text;
@@ -332,11 +492,33 @@
     background-image: linear-gradient(135deg, 
       oklch(0.55 0.22 265), 
       oklch(0.65 0.18 200));
+    background-size: 200% 200%;
+    transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .text-gradient:hover {
+    background-position: 100% 0;
   }
   
   .dark .text-gradient {
     background-image: linear-gradient(135deg, 
       oklch(0.70 0.20 265), 
       oklch(0.70 0.17 200));
+  }
+  
+  /* Fade in animation */
+  .fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

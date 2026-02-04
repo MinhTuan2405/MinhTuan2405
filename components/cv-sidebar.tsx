@@ -36,15 +36,39 @@ export default function CVSidebar({ activeSection, setActiveSection, isMobile = 
             initial={isMobile ? { opacity: 0, x: -20 } : false}
             animate={isMobile ? { opacity: 1, x: 0 } : false}
             transition={isMobile ? { delay: index * 0.05 } : undefined}
-            className={`text-left py-2.5 px-3 rounded-xl transition-smooth ${
+            className={`relative text-left py-2.5 px-3 rounded-xl transition-smooth overflow-hidden ${
               activeSection === item.id
                 ? "text-accent font-semibold glass-button shadow-elevated"
-                : "text-muted-foreground hover:text-foreground hover:glass-button"
+                : "text-muted-foreground hover:text-foreground"
             }`}
             whileHover={{ x: 4, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            {item.label}
+            {/* Active indicator glow */}
+            {activeSection === item.id && (
+              <motion.div
+                layoutId={isMobile ? "mobile-nav-indicator" : "nav-indicator"}
+                className="absolute inset-0 rounded-xl"
+                style={{
+                  background: "radial-gradient(circle at 0% 50%, oklch(0.65 0.18 200 / 0.15) 0%, transparent 100%)"
+                }}
+                transition={{ 
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30
+                }}
+              />
+            )}
+            
+            {/* Hover glow effect */}
+            <motion.div
+              className="absolute inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+              style={{
+                background: "radial-gradient(circle at 0% 50%, oklch(0.65 0.18 200 / 0.08) 0%, transparent 100%)"
+              }}
+            />
+            
+            <span className="relative z-10">{item.label}</span>
           </motion.button>
         ))}
       </nav>
@@ -55,15 +79,15 @@ export default function CVSidebar({ activeSection, setActiveSection, isMobile = 
           Contact
         </h2>
         <div className="flex items-center gap-3 px-3 text-muted-foreground hover:text-foreground transition-smooth group">
-          <MapPin className="w-4 h-4 flex-shrink-0 group-hover:text-accent transition-smooth" />
+          <MapPin className="w-4 h-4 shrink-0 group-hover:text-accent transition-smooth" />
           <span className="text-sm">Ho Chi Minh City</span>
         </div>
         <div className="flex items-center gap-3 px-3 text-muted-foreground hover:text-foreground transition-smooth group">
-          <Phone className="w-4 h-4 flex-shrink-0 group-hover:text-accent transition-smooth" />
+          <Phone className="w-4 h-4 shrink-0 group-hover:text-accent transition-smooth" />
           <span className="text-sm">034 2089 493</span>
         </div>
         <div className="flex items-center gap-3 px-3 text-muted-foreground hover:text-foreground transition-smooth group">
-          <Mail className="w-4 h-4 flex-shrink-0 group-hover:text-accent transition-smooth" />
+          <Mail className="w-4 h-4 shrink-0 group-hover:text-accent transition-smooth" />
           <a 
             href="mailto:tuannguyen.02042005@gmail.com" 
             className="hover:text-accent transition-smooth text-sm break-all"
