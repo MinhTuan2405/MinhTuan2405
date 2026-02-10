@@ -143,9 +143,6 @@
       --tw-drop-shadow-size: initial;
       --tw-duration: initial;
       --tw-ease: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-content: "";
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
@@ -1217,7 +1214,7 @@
     flex: 1;
   }
 
-  .flex-shrink-0, .shrink-0 {
+  .shrink-0 {
     flex-shrink: 0;
   }
 
@@ -1806,12 +1803,12 @@
     background-color: var(--color-white);
   }
 
-  .bg-\[radial-gradient\(circle_at_30\%_20\%\,oklch\(0\.6_0\.15_265_\/_0\.08\)\,transparent_50\%\)\] {
+  .bg-\[radial-gradient\(circle_at_30\%_20\%\,oklch\(0\.6_0\.15_265\/0\.08\)\,transparent_50\%\)\] {
     background-image: radial-gradient(circle at 30% 20%, #537bd914, #0000 50%);
     background-image: radial-gradient(circle at 30% 20%, lab(52.2464% 8.43963 -53.3822 / .08), #0000 50%);
   }
 
-  .bg-\[radial-gradient\(circle_at_70\%_80\%\,oklch\(0\.65_0\.12_200_\/_0\.06\)\,transparent_50\%\)\] {
+  .bg-\[radial-gradient\(circle_at_70\%_80\%\,oklch\(0\.65_0\.12_200\/0\.06\)\,transparent_50\%\)\] {
     background-image: radial-gradient(circle at 70% 80%, #00a3aa0f, #0000 50%);
     background-image: radial-gradient(circle at 70% 80%, lab(60.5555% -37.4904 -15.3679 / .06), #0000 50%);
   }
@@ -2468,15 +2465,6 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:scale-110:is(:where(.group):hover *) {
-      --tw-scale-x: 110%;
-      --tw-scale-y: 110%;
-      --tw-scale-z: 110%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:text-accent:is(:where(.group):hover *) {
       color: var(--accent);
     }
@@ -2875,15 +2863,6 @@
   .last\:border-b-0:last-child {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 0;
-  }
-
-  @media (hover: hover) {
-    .hover\:scale-105:hover {
-      --tw-scale-x: 105%;
-      --tw-scale-y: 105%;
-      --tw-scale-z: 105%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
   }
 
   @media (hover: hover) {
@@ -6202,24 +6181,6 @@
 @property --tw-ease {
   syntax: "*";
   inherits: false
-}
-
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
 }
 
 @property --tw-content {

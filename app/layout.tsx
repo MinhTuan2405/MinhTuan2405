@@ -18,22 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'NguyenHaMinhTuan Data Engineer',
-  description: 'Nguyen Ha Minh Tuan - Data Engineer Resume',
+  description: 'Minh Tuan - Data Engineer | Analytics Engineer',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/icon.jpg',
     apple: '/apple-icon.png',
   },
 }
