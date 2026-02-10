@@ -4,16 +4,16 @@ import { motion } from "framer-motion"
 
 export default function CVExperience() {
   const experiences = [
-      {
+    {
       position: "Analytics Engineer",
       company: "HIPTECH SOLUTION",
       location: "Ho Chi Minh City",
-      period: "01/2026 - present",
+      period: "01/2026 - Present",
       highlights: [
-        "Learned about modern data tools and workflows, applying them to complete assigned tasks",
-        "Supported the data engineering team by implementing pipeline features and fixes as assigned",
-        "Develop data pipeline and analysis data by using dbt, dagster and related tools",
-        "Visulize data, discover the potentinal metrics on PowerBI and related tools"
+        "Gained hands-on experience with modern data tools and analytics workflows, applying acquired knowledge to successfully complete assigned tasks",
+        "Collaborated closely with the data engineering team to implement new pipeline features, troubleshoot issues, and maintain data reliability",
+        "Designed, developed, and maintained data pipelines and analytical datasets using dbt, Dagster, and related data engineering tools",
+        "Performed data visualization and exploratory analysis to identify meaningful business metrics using Power BI and other visualization platforms",
       ],
     },
     {
@@ -22,22 +22,22 @@ export default function CVExperience() {
       location: "Ho Chi Minh City",
       period: "10/2025 - 01/2026",
       highlights: [
-        "Learned about modern data tools and workflows, applying them to complete assigned tasks",
-        "Supported the data engineering team by implementing pipeline features and fixes as assigned",
-        "Developed module Text-to-SQL to communicate with the datalakehouse on the MinIO",
+        "Built a solid foundation in modern data engineering tools and workflows through hands-on project work and team collaboration",
+        "Assisted the data engineering team in developing and enhancing data pipelines by implementing assigned features and bug fixes",
+        "Developed a Text-to-SQL module to enable efficient interaction with the data lakehouse stored on MinIO, improving data accessibility for analysis",
       ],
     },
     {
       position: "Software Engineer Intern",
-      company: "MOSO team",
+      company: "MOSO Team",
       location: "Remote",
       period: "08/2024 - 01/2025",
       highlights: [
-        "Learned about teamwork workflows and software development processes",
-        "Studied and practiced backend technologies such as Node.js, JavaScript, and networking, CI/CD",
+        "Learned and applied collaborative teamwork practices, including version control, task management, and software development workflows",
+        "Studied and practiced backend development technologies such as Node.js and JavaScript, along with fundamental concepts in networking and CI/CD pipelines",
       ],
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
