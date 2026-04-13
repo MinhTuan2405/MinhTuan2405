@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function CVExperience() {
   const experiences = [
     {
-      position: "Analytics Engineer",
+      position: "Analytics Engineer | Applied AI Engineer",
       company: "HIPTECH SOLUTION",
       location: "Ho Chi Minh City",
       period: "01/2026 - Present",
@@ -14,6 +14,7 @@ export default function CVExperience() {
         "Collaborated closely with the data engineering team to implement new pipeline features, troubleshoot issues, and maintain data reliability",
         "Designed, developed, and maintained data pipelines and analytical datasets using dbt, Dagster, and related data engineering tools",
         "Performed data visualization and exploratory analysis to identify meaningful business metrics using Power BI and other visualization platforms",
+        "Applied AI for co-working, coding and revision. Using Claude, Openwork, Opencode for work, context management and build AI agentic workflows "
       ],
     },
     {

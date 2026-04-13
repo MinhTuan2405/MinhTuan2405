@@ -115,7 +115,7 @@ const metadata = {
     title: 'NguyenHaMinhTuan Data Engineer',
     description: 'Minh Tuan - Data Engineer | Analytics Engineer',
     icons: {
-        icon: '/icon.jpg',
+        icon: '/icon.png',
         apple: '/apple-icon.png'
     }
 };
