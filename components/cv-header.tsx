@@ -4,8 +4,13 @@ import { motion } from "framer-motion"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import type { HeaderContent } from "@/lib/cv-content-types"
 
-export default function CVHeader() {
+interface CVHeaderProps {
+  content: HeaderContent
+}
+
+export default function CVHeader({ content }: CVHeaderProps) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -23,14 +28,14 @@ export default function CVHeader() {
           <div className="flex-1 min-w-0">
             <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground truncate">
-                Nguyen Ha Minh Tuan
+                {content.name}
               </h1>
               <span className="text-sm sm:text-base lg:text-lg text-muted-foreground">
-                Data Engineer | Analytics Engineer
+                {content.title}
               </span>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground mt-2">
-              Building scalable data architectures and pipelines for the future
+              {content.tagline}
             </p>
           </div>
           

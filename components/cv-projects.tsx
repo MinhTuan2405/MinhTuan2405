@@ -2,65 +2,13 @@
 
 import { motion } from "framer-motion"
 import { Github } from "lucide-react"
+import type { ProjectsContent } from "@/lib/cv-content-types"
 
-export default function CVProjects() {
-  const projects = [
-    {
-      title: "EnsemTrust: Fake news detection",
-      period: "10/2025 - 12/2025",
-      description:
-        "Building a complete data platform using the Lakehouse architecture, Ensemble Learning models to accurately classify news articles as genuine or fake and enabling analysis for reporting",
-      technologies: [
-        "Dagster",
-        "Apache Spark",
-        "MinIO",
-        "LightGBM",
-        "SVM",
-        "Logistic Regression",
-        "Metabase",
-        "Streamlit",
-      ],
-      outcome:
-        "Provided a data platform for news storage and reporting served through Metabase, and a Streamlit application that receives news input and responds whether it is fake or true, verifying its credibility.",
-      role: "Data Engineer",
-      teamSize: "3",
-      github: "https://github.com/MinhTuan2405/EnsemTrust",
-    },
-    {
-      title: "[AIDE] linkedIn_job_dataplatform",
-      period: "8/2025 - 10/2025",
-      description:
-        "Building a data platform analyzing 100,000+ LinkedIn job postings (2023–2024), providing insights into hiring trends and workforce demand",
-      technologies: ["Dagster", "DBT", "Apache Spark", "PostgreSQL", "MinIO", "Metabase"],
-      outcome:
-        "Analyzed recruitment and salary trends by company, industry, skill, and location to support job seekers, employers, and training institutions and served analytics through Metabase.",
-      role: "Data Engineer",
-      teamSize: "1",
-      github: "https://github.com/MinhTuan2405/linkedIn_job_datapl4tform",
-    },
-    {
-      title: "BikeStoreShop Backend API",
-      period: "11/2025 - 12/2025",
-      description:
-        "Building a RESTful API server for bicycle store management system with 54 endpoints, handling product management, order processing, customer management, and business analytics",
-      technologies: [
-        "FastAPI",
-        "PostgreSQL",
-        "SQLAlchemy",
-        "Alembic",
-        "JWT",
-        "Pytest",
-        "Pydantic",
-        "Uvicorn",
-      ],
-      outcome:
-        "Delivered a complete backend system with authentication/authorization, product catalog management, order processing, customer relationship management, and 13 comprehensive business analytics endpoints for sales reporting and insights.",
-      role: "Backend Developer",
-      teamSize: "2",
-      github: "https://github.com/MinhTuan2405/LightWeightBikeStore"
-    },
-  ]
+interface CVProjectsProps {
+  content: ProjectsContent
+}
 
+export default function CVProjects({ content }: CVProjectsProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -79,10 +27,10 @@ export default function CVProjects() {
 
   return (
     <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
-      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Projects</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">{content.title}</h2>
 
       <div className="space-y-4 sm:space-y-6">
-        {projects.map((project, index) => (
+        {content.items.map((project, index) => (
           <motion.div
             key={index}
             variants={itemVariants}

@@ -2,22 +2,16 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import type { SidebarContent } from "@/lib/cv-content-types"
 
 interface CVSidebarProps {
   activeSection: string
   setActiveSection: (section: string) => void
+  content: SidebarContent
   isMobile?: boolean
 }
 
-export default function CVSidebar({ activeSection, setActiveSection, isMobile = false }: CVSidebarProps) {
-  const navItems = [
-    { id: "about", label: "About" },
-    { id: "education", label: "Education" },
-    { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-  ]
-
+export default function CVSidebar({ activeSection, setActiveSection, content, isMobile = false }: CVSidebarProps) {
   const sidebarClasses = isMobile
     ? "flex flex-col gap-12 h-full"
     : "hidden lg:flex flex-col w-64 glass sticky top-0 h-screen p-8 gap-12"
@@ -27,9 +21,9 @@ export default function CVSidebar({ activeSection, setActiveSection, isMobile = 
       {/* Navigation */}
       <nav className={`flex flex-col gap-3 ${isMobile ? "" : "pt-8"}`}>
         <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 px-3">
-          TuanNHM
+          {content.brand}
         </h2>
-        {navItems.map((item, index) => (
+        {content.navItems.map((item, index) => (
           <motion.button
             key={item.id}
             onClick={() => setActiveSection(item.id)}
@@ -80,26 +74,26 @@ export default function CVSidebar({ activeSection, setActiveSection, isMobile = 
         </h2>
         <div className="flex items-center gap-3 px-3 text-muted-foreground hover:text-foreground transition-smooth group">
           <MapPin className="w-4 h-4 shrink-0 group-hover:text-accent transition-smooth" />
-          <span className="text-sm">Ho Chi Minh City</span>
+          <span className="text-sm">{content.contact.location}</span>
         </div>
         <div className="flex items-center gap-3 px-3 text-muted-foreground hover:text-foreground transition-smooth group">
           <Phone className="w-4 h-4 shrink-0 group-hover:text-accent transition-smooth" />
-          <span className="text-sm">034 2089 493</span>
+          <span className="text-sm">{content.contact.phone}</span>
         </div>
         <div className="flex items-center gap-3 px-3 text-muted-foreground hover:text-foreground transition-smooth group">
           <Mail className="w-4 h-4 shrink-0 group-hover:text-accent transition-smooth" />
           <a 
-            href="mailto:tuannguyen.02042005@gmail.com" 
+            href={`mailto:${content.contact.email}`}
             className="hover:text-accent transition-smooth text-sm break-all"
           >
-            tuannguyen.02042005@gmail.com
+            {content.contact.email}
           </a>
         </div>
 
         {/* Social Links */}
         <div className="flex gap-3 pt-6 px-3">
           <motion.a
-            href="https://www.linkedin.com/in/minhtuan2405dev/"
+            href={content.contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl glass-button text-muted-foreground hover:text-accent hover:shadow-elevated transition-smooth"
@@ -110,7 +104,7 @@ export default function CVSidebar({ activeSection, setActiveSection, isMobile = 
             <Linkedin className="w-5 h-5" />
           </motion.a>
           <motion.a
-            href="https://github.com/MinhTuan2405"
+            href={content.contact.github}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl glass-button text-muted-foreground hover:text-accent hover:shadow-elevated transition-smooth"

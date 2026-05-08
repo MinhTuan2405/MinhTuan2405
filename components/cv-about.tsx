@@ -1,8 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
+import type { AboutContent } from "@/lib/cv-content-types"
 
-export default function CVAbout() {
+interface CVAboutProps {
+  content: AboutContent
+}
+
+export default function CVAbout({ content }: CVAboutProps) {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -12,22 +17,20 @@ export default function CVAbout() {
     >
       <div>
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">
-          About
+          {content.title}
         </h2>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-          Dedicated to completing my Bachelor's degree and leveraging core Data Engineering competencies to excel in a
-          Fresher position. Committed to long-term professional growth, aiming to advance to a Senior Data Engineer role
-          specialized in Cloud Computing, Distributed Systems, and scalable data architectures.
-        </p>
+        <div className="space-y-4">
+          {content.paragraphs.map((paragraph) => (
+            <p key={paragraph} className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
 
       {/* Key Metrics */}
       <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
-        {[
-          { label: "Projects", value: "3+" },
-          { label: "Experience", value: "1yr" },
-          { label: "Skills", value: "15+" },
-        ].map((metric, index) => (
+        {content.metrics.map((metric, index) => (
           <motion.div
             key={metric.label}
             initial={{ opacity: 0, y: 20 }}

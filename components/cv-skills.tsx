@@ -1,39 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
+import type { SkillsContent } from "@/lib/cv-content-types"
 
-export default function CVSkills() {
-  const skillCategories = [
-    {
-      title: "Programming",
-      skills: ["Python", "JavaScript", "TypeScript", "SQL"],
-    },
-    {
-      title: "Data Technologies",
-      skills: ["Dagster", "Apache Spark", "Apache Kafka", "DBT", "Docker", "Apache Hive", "Trino"],
-    },
-    {
-      title: "Data Engineering",
-      skills: ["Data modeling", "OLAP", "ETL/ELT"],
-    },
-    {
-      title: "Data Analysis",
-      skills: ["PowerBI", "DAX", "MDX"], 
-    },
-    {
-      title: "Software",
-      skills: ["FastAPI", "ExpressJS", "React"],
-    },
-    {
-      title: "Automation",
-      skills: ["n8n", "API", "Worklow"],
-    },
-    {
-      title: "Others",
-      skills: ["Git", "Linux", "Bash Script"],
-    },
-  ]
+interface CVSkillsProps {
+  content: SkillsContent
+}
 
+export default function CVSkills({ content }: CVSkillsProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -52,10 +26,10 @@ export default function CVSkills() {
 
   return (
     <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
-      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Skills</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">{content.title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        {skillCategories.map((category) => (
+        {content.categories.map((category) => (
           <motion.div
             key={category.title}
             variants={itemVariants}

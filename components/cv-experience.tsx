@@ -1,45 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
+import type { ExperienceContent } from "@/lib/cv-content-types"
 
-export default function CVExperience() {
-  const experiences = [
-    {
-      position: "Analytics Engineer | Applied AI Engineer",
-      company: "HIPTECH SOLUTION",
-      location: "Ho Chi Minh City",
-      period: "01/2026 - Present",
-      highlights: [
-        "Gained hands-on experience with modern data tools and analytics workflows, applying acquired knowledge to successfully complete assigned tasks",
-        "Collaborated closely with the data engineering team to implement new pipeline features, troubleshoot issues, and maintain data reliability",
-        "Designed, developed, and maintained data pipelines and analytical datasets using dbt, Dagster, and related data engineering tools",
-        "Performed data visualization and exploratory analysis to identify meaningful business metrics using Power BI and other visualization platforms",
-        "Applied AI for co-working, coding and revision. Using Claude, Openwork, Opencode for work, context management and build AI agentic workflows "
-      ],
-    },
-    {
-      position: "Data Engineer Intern",
-      company: "HIPTECH SOLUTION",
-      location: "Ho Chi Minh City",
-      period: "10/2025 - 01/2026",
-      highlights: [
-        "Built a solid foundation in modern data engineering tools and workflows through hands-on project work and team collaboration",
-        "Assisted the data engineering team in developing and enhancing data pipelines by implementing assigned features and bug fixes",
-        "Developed a Text-to-SQL module to enable efficient interaction with the data lakehouse stored on MinIO, improving data accessibility for analysis",
-      ],
-    },
-    {
-      position: "Software Engineer Intern",
-      company: "MOSO Team",
-      location: "Remote",
-      period: "08/2024 - 01/2025",
-      highlights: [
-        "Learned and applied collaborative teamwork practices, including version control, task management, and software development workflows",
-        "Studied and practiced backend development technologies such as Node.js and JavaScript, along with fundamental concepts in networking and CI/CD pipelines",
-      ],
-    },
-  ];
+interface CVExperienceProps {
+  content: ExperienceContent
+}
 
+export default function CVExperience({ content }: CVExperienceProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -58,10 +26,10 @@ export default function CVExperience() {
 
   return (
     <motion.section variants={containerVariants} initial="hidden" animate="visible" className="space-y-8 sm:space-y-10">
-      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Experience</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">{content.title}</h2>
 
       <div className="space-y-4 sm:space-y-6">
-        {experiences.map((exp, index) => (
+        {content.items.map((exp, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
